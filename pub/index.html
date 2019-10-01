@@ -11,11 +11,14 @@
 
     <!--Header som innehåller logotyp, navigation, företagsnamn-->
     <header>
-        <a href="index.html" title="Startsida" id="logo">
-        <img src="images/logo.png" alt="dog paw"/>
-            <h1>HUNDLYAN</h1></a>
+        <div class="logName">
+        <a href="index.html" title="Startsida">
+        <img src="images/logo.png" id="logoImg" alt="dog paw"/>
+            <p class="welcome">Välkommen till</p>
+            <h1>HUNDLYAN</h1></a></div>
+        </div>
 
-        <div class="nav">
+        <div class="hamMenu">
             <label for="toggle">&#9776;</label><!--Hamburgermeny för tablet och mobil, annars vanlig navigeringsmeny-->
             <input type="checkbox" id ="toggle"/>  
         <nav id="navMenu">
@@ -24,26 +27,47 @@
                 <li><a href="#" title="Hundarna">HUNDARNA</a></li>
                 <li><a href="#" title="Aktuellt">AKTUELLT</a></li>
                 <li><a href="#" title="Om oss">OM OSS</a></li>
-
-                
+                <li><a href="#" title="Kontakt">KONTAKT</a></li>
             </ul>
         </nav>
         </div>
     </header>
         
         <div id="container">
-        
 
-        </div>
+            <div class="pictures">
+                <img src="images/hund1.jpg" class="dog" alt="puppy"/>
+                <img src="images/hund2.jpg" class="dog" alt="dog"/>
+                <img src="images/hund3.jpg" class="dog" alt="dog"/>
+            </div>
 
+            <div class="maintext">
+                <div class="text">
+                <h2><a href="#">Om Hundlyan</a></h2><br/>
+                <p>Fram för rot och precis och miljoner upprätthållande strand mot nu smultron, 
+                söka brunsås det tiden vemod sjö så om enligt kan, hav det smultron när tiden händer
+                vid är annan därmed. </p></div> 
+
+                <div class="text">
+                <h2><a href="#">Vi behöver jourhem</a></h2><br/>
+                <p>Fram för rot och precis och miljoner upprätthållande strand mot nu smultron, 
+                söka brunsås det tiden vemod sjö så om enligt kan, hav det smultron när tiden händer
+                vid är annan därmed. </p></div>
+
+                <div class="text">
+                <h2><a href="#">Skänk en gåva</a></h2><br/>
+                <p>Fram för rot och precis och miljoner upprätthållande strand mot nu smultron, 
+                söka brunsås det tiden vemod sjö så om enligt kan, hav det smultron när tiden händer
+                vid är annan därmed. </p></div>
+             </div>
 
     <script src="js/main.js"></script>
 
     <!--footer-->
     <footer>
-            <p>POSTADRESS<br/> Krokvägen 118<br/> 330 30 Östersund</p><br/>
-            <p>TELEFON<br/> +46 70 232 23 23</p><br/>
-            <p>E-POST<br/><a href="#"> info@hundlyan.se</a></p>
+        <p class="info">POSTADRESS<br/> Krokvägen 118<br/> 330 30 Östersund</p><br/>
+        <p class="info">TELEFON<br/> +46 70 232 23 23</p><br/>
+        <p class="info">E-POST<br/><a href="#"> info@hundlyan.se</a></p>
     </footer>
 </body>
 </html>

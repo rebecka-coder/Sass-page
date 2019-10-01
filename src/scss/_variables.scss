@@ -1,0 +1,38 @@
+//Variabler för typsnitt, färger
+$font-stack: Georgia, 'Times New Roman', Times, serif;
+$basic-color: #ffffff;
+$darken-color: darken(#598fa5, 4);
+
+
+//Variabler storlekar
+$maximum: 100vw;
+
+//Variabler för vendor prefixes
+@mixin vendor {
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-pack: center;
+-ms-flex-pack: center;
+justify-content: center;
+}
+@mixin vendor-phone {
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+-ms-flex-direction: column;
+flex-direction: column;  
+}
+//Mixins för olika skärmar
+@mixin for-size($size) {
+    @if $size == phone { 
+      @media (max-width: 767px) { @content; 
+      } //Skärmstorlek mobil
+    } @else if $size == tablet {
+      @media (max-width: 1024px) { @content; } //skärmstorlek tablet
+    } @else if $size == desktop {
+      @media (min-width: 1024px) { @content; } //skärmstorlek desktop
+  }
+}

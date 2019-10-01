@@ -11,7 +11,8 @@ const files = {
     htmlPath: "src/**/*.html",
     jsPath: "src/**/*.js",
     sassPath: "src/**/*.scss",
-    imagePath: "src/**/*.png"
+    imagePath: "src/**/*.png",
+    imagePaths: "src/**/*.jpg"
 }
 
 //Task: Sass
@@ -32,6 +33,9 @@ function copyImages() {
     return src(files.imagePath)
         .pipe(dest('pub'))
         .pipe(browserSync.stream())
+    return src(files.imagePaths)
+        .pipe(dest('pub'))
+        .pipe(browserSync.stream())  
 }
 //Task: Sammanslå jsfiler, minifiera filer
 function jsTask() {
@@ -48,7 +52,7 @@ function watchTask() {
            baseDir: 'pub/'
        }
    });
-    watch([files.htmlPath, files.jsPath, files.sassPath, files.imagePath],
+    watch([files.htmlPath, files.jsPath, files.sassPath, files.imagePath, files.imagePaths],
     parallel(copyHTML, copyImages, jsTask, sassTask)).on('change', browserSync.reload);
 }
 //Kalla på funktioner
