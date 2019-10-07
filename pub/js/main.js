@@ -1,1 +1,7 @@
-console.log("Hello from gulptest1.js"),console.log("Hello from gulptest2.js");
+"use strict";
+
+console.log("Hello from gulptest1.js");
+"use strict";
+
+console.log("Hello from gulptest2.js");
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImpzL3Rlc3QxLmpzIiwianMvdGVzdDIuanMiXSwibmFtZXMiOlsiY29uc29sZSIsImxvZyJdLCJtYXBwaW5ncyI6Ijs7QUFBQUEsT0FBTyxDQUFDQyxHQUFSLENBQVkseUJBQVo7OztBQ0FBRCxPQUFPLENBQUNDLEdBQVIsQ0FBWSx5QkFBWiIsImZpbGUiOiJtYWluLmpzIiwic291cmNlc0NvbnRlbnQiOlsiY29uc29sZS5sb2coXCJIZWxsbyBmcm9tIGd1bHB0ZXN0MS5qc1wiKTsiLCJjb25zb2xlLmxvZyhcIkhlbGxvIGZyb20gZ3VscHRlc3QyLmpzXCIpOyJdfQ==

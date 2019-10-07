@@ -5,6 +5,8 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify-es').default;
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
+var babel = require("gulp-babel");
+var sourcemaps = require("gulp-sourcemaps");
 
 // Sökvägar
 const files = {
@@ -15,6 +17,16 @@ const files = {
     imagePaths: "src/**/*.jpg"
 }
 
+//Task: Sourcemaps
+function sourceMaps() {
+    return src(files.jsPath)
+      .pipe(sourcemaps.init())
+      .pipe(babel())
+      .pipe(concat("main.js"))
+      .pipe(sourcemaps.write())
+      .pipe(dest("pub/js"))
+      .pipe(browserSync.stream());
+}
 //Task: Sass
 function sassTask() {
     return src(files.sassPath)
@@ -53,13 +65,14 @@ function watchTask() {
        }
    });
     watch([files.htmlPath, files.jsPath, files.sassPath, files.imagePath, files.imagePaths],
-    parallel(copyHTML, copyImages, jsTask, sassTask)).on('change', browserSync.reload);
+    parallel(copyHTML, copyImages, jsTask, sassTask, sourceMaps)).on('change', browserSync.reload);
 }
 //Kalla på funktioner
 exports.default = series(
     sassTask,
     copyHTML, 
     copyImages, 
-    jsTask, 
+    jsTask,
+    sourceMaps,
     watchTask
 );
